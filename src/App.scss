@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+}
+.width {
+  width: 100%;
+}
+
+.container {
+  max-width: 90%;
+  margin: auto;
+}
+
+.d_flex {
+  display: flex;
+}
+.j_flex {
+  display: flex;
+  justify-content: center;
+}

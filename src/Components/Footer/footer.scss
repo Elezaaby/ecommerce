@@ -1,0 +1,177 @@
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 480px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+.footer {
+  margin-top: 70px;
+
+  .join_footer {
+    color: #fff;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .join_footer_desc {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+
+      span {
+        font-size: 30px;
+        font-weight: 500;
+
+        @include tablet() {
+          margin-bottom: 15px;
+          font-size: 25px;
+          font-weight: 400;
+          width: 100%;
+          text-align: center;
+        }
+
+        @include mobile() {
+          width: 100%;
+          font-size: 15px;
+          text-align: center;
+          margin-bottom: 15px;
+        }
+      }
+      input {
+        height: 45px;
+        width: 30%;
+
+        @include tablet() {
+          width: 50%;
+        }
+        @include mobile() {
+          width: 90%;
+        }
+
+        &::placeholder {
+          padding: 20px;
+          color: #000;
+        }
+      }
+
+      button {
+        width: 10%;
+        color: #fff;
+        padding: 10px 30px;
+        background-color: rgb(218, 43, 43);
+
+        @include tablet() {
+          width: 20%;
+        }
+        @include mobile() {
+          margin-top: 20px;
+          width: 50%;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  .ul_footer {
+    display: flex;
+    margin-top: 30px;
+    padding: 10px 40px;
+    flex-wrap: wrap;
+
+    @include tablet() {
+      padding: 10px 20px;
+    }
+    @include mobile() {
+      padding: 10px 20px;
+    }
+
+    .item_footer {
+      width: 20%;
+      @include mobile() {
+        margin-top: 10px;
+      }
+
+      i {
+        margin-right: 10px;
+        margin-top: 10px;
+      }
+
+      @include tablet() {
+        width: 25%;
+      }
+
+      @include mobile() {
+        width: 100%;
+      }
+
+      h3 {
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 10px;
+
+        @include tablet() {
+          font-size: 25px;
+          margin-bottom: 10px;
+        }
+      }
+
+      span {
+        font-size: 13px;
+      }
+
+      ul {
+        li {
+          margin-top: 10px;
+          text-transform: uppercase;
+          font-size: 13px;
+          font-weight: 300;
+          a {
+            color: #333;
+          }
+        }
+      }
+    }
+    .item_footer_last {
+      .enter_email {
+        background-color: #000;
+
+        input {
+          padding: 13px;
+          border: none;
+          background-color: #000;
+          color: #fff;
+          width: 90%;
+          outline: none;
+
+          &::placeholder {
+            color: #fff;
+            opacity: 1;
+            font-size: 10px;
+          }
+
+          @include tablet() {
+            width: 90%;
+          }
+        }
+
+        i {
+          color: #fff;
+          font-size: 13 px;
+        }
+      }
+      @include tablet() {
+        margin-top: 15px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}

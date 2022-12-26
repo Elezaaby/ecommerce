@@ -1,0 +1,90 @@
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+.trending {
+  margin-top: 60px;
+  .trending_title {
+    font-size: 40px;
+    font-weight: 200;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    @include mobile {
+      font-size: 25px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .trending_box {
+    cursor: pointer;
+
+    .name_product {
+      text-align: center;
+
+      h5 {
+        font-size: 18px;
+        font-weight: 400;
+        margin-top: 15px;
+        @include mobile {
+          font-size: 10px;
+        }
+      }
+
+      span {
+        font-size: 14px;
+        opacity: 0.5;
+      }
+    }
+    .price {
+      text-align: center;
+
+      // button {
+      //   margin-top: 15px;
+      //   background-color: gray;
+      //   padding: 10px 30px;
+      //   border-radius: 10px;
+      //   color: #fff;
+      //   // display: none;
+      // }
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .product_like {
+      position: relative;
+
+      label {
+        position: absolute;
+        top: -410px;
+        right: 15px;
+        background-color: #0f3460;
+        padding: 1px 10px;
+        color: #fff;
+        font-size: 12px;
+        border-radius: 50px;
+      }
+      i {
+        position: absolute;
+        top: -110px;
+        right: 20px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}

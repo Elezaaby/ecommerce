@@ -1,0 +1,119 @@
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 480px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+.filtar {
+  .nav_img {
+    padding: 70px;
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+
+    @include mobile {
+      background-size: contain;
+      padding: 30px;
+      height: 200px;
+    }
+    @include tablet {
+      background-size: contain;
+      padding: 50px;
+      font-size: 10px;
+    }
+    .container_img_desc {
+      background-color: #fff;
+      width: 25%;
+      padding: 30px 50px;
+
+      @include mobile {
+        width: 60%;
+        padding: 20px 20px;
+      }
+
+      @include tablet {
+        width: 50%;
+        padding: 30px 30px;
+      }
+      h5 {
+        font-size: 34px;
+        font-weight: 500;
+        @include mobile {
+          font-size: 20px;
+        }
+      }
+      span {
+        font-size: 12px;
+        opacity: 0.5;
+      }
+    }
+  }
+  .nav_desc {
+    padding: 15px 0;
+    margin-top: 30px;
+    width: 90%;
+    margin: auto;
+
+    @include mobile() {
+      width: 100%;
+      padding: 10px;
+    }
+    @include tablet() {
+      width: 100%;
+      padding: 15px;
+    }
+
+    .d_flex {
+      justify-content: space-between;
+      button {
+        // background-color: aqua;
+        padding: 10px 20px;
+        border: #000 1px solid;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin-right: 10px;
+        &:hover {
+          background-color: #000;
+          color: #fff;
+        }
+
+        @include mobile {
+          padding: 10px;
+          margin-bottom: 10px;
+        }
+        @include tablet {
+          padding: 10px;
+        }
+        span {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+.nav_desc.active {
+  position: fixed;
+  top: 55px;
+  z-index: 1000;
+  width: 100%;
+  padding: 10px 60px;
+  background-color: #fff;
+  box-shadow: -1px 11px 24px -11px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+
+  @include mobile() {
+    padding: 5px;
+  }
+  @include tablet() {
+    padding: 10px;
+  }
+}

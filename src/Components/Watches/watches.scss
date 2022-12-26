@@ -1,0 +1,118 @@
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 480px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+.watches_prodect {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 70px;
+  .watches_box {
+    width: 25%;
+    margin-bottom: 40px;
+
+    @include mobile {
+      width: 50%;
+    }
+    @include tablet {
+      width: 33.3%;
+    }
+
+    .hed_box {
+      transition: all 0.3s;
+
+      .name_product,
+      .price,
+      .add_cart {
+        text-align: center;
+      }
+
+      .name_product {
+        h5 {
+          font-size: 15px;
+          font-weight: 400;
+        }
+        span {
+          opacity: 0.5;
+          font-size: 14px;
+        }
+      }
+
+      .price {
+        li {
+          margin-top: 10px;
+          font-size: 13px;
+        }
+      }
+    }
+
+    &:hover .hed_box {
+      transform: translateY(-20px);
+    }
+    &:hover .add_cart {
+      opacity: 1;
+    }
+
+    .add_cart {
+      opacity: 0;
+      transition: all 0.2s;
+      cursor: pointer;
+
+      @include mobile {
+        opacity: 1;
+      }
+
+      button {
+        width: 100%;
+        padding: 15px 10px;
+        background-color: black;
+        color: #fff;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 15px;
+        transition: all 0.5s;
+        border: #000 1px solid;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #53c56f;
+          border: #000 1px solid;
+        }
+
+        @include mobile {
+          width: 80%;
+          margin-left: 17px;
+          font-size: 13px;
+          padding: 10px 5px;
+        }
+      }
+    }
+  }
+  .watche_more {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+
+    .btn_watche_more {
+      width: 20%;
+      background-color: #53c56f;
+      border-radius: 10px;
+      padding: 15px;
+      color: #fff;
+      font-size: 15px;
+      cursor: pointer;
+      @include mobile {
+        font-size: 10px;
+        padding: 10px;
+        width: 30%;
+      }
+    }
+  }
+}
